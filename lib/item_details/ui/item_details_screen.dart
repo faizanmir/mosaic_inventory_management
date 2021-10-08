@@ -130,7 +130,8 @@ class _ItemDetailsScreenState
   }
 
   @override
-  void onImageAdded() {
+  void onImageAdded()
+  {
     loadPageData();
   }
 

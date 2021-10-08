@@ -1,7 +1,7 @@
 import 'package:mosaic_inventory_management/auth_token_prefs/auth_token_mixin.dart';
+import 'package:mosaic_inventory_management/item_category/services/web.dart';
 import 'package:mosaic_inventory_management/models/category_response.dart';
 import 'package:mosaic_inventory_management/models/user_category_reponse.dart';
-import 'package:mosaic_inventory_management/item_category/services/web.dart';
 import 'package:mosaic_inventory_management/services/service_locator.dart';
 
 class CategoryRepository  extends CategoryWebApi with AuthTokenMixin{

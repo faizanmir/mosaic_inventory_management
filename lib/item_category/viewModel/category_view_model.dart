@@ -1,7 +1,7 @@
 import 'package:mosaic_inventory_management/base/base_view_model.dart';
-import 'package:mosaic_inventory_management/models/user_category_reponse.dart';
 import 'package:mosaic_inventory_management/item_category/navigator/item_category_navigator.dart';
 import 'package:mosaic_inventory_management/item_category/repos/category_repo.dart';
+import 'package:mosaic_inventory_management/models/user_category_reponse.dart';
 import 'package:mosaic_inventory_management/services/service_locator.dart';
 
 class CategoryViewModel extends BaseViewModel<CategoryNavigator> {

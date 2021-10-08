@@ -3,6 +3,10 @@ import 'package:mosaic_inventory_management/item_category/repos/category_repo.da
 import 'package:mosaic_inventory_management/item_category/services/web.dart';
 import 'package:mosaic_inventory_management/item_category/services/web_api_impl.dart';
 import 'package:mosaic_inventory_management/item_category/viewModel/category_view_model.dart';
+import 'package:mosaic_inventory_management/item_details/repos/item_details_repo.dart';
+import 'package:mosaic_inventory_management/item_details/services/web_api.dart';
+import 'package:mosaic_inventory_management/item_details/services/web_api_impl.dart';
+import 'package:mosaic_inventory_management/item_details/viewModel/item_details_view_model.dart';
 import 'package:mosaic_inventory_management/items/repos/items_repo.dart';
 import 'package:mosaic_inventory_management/items/services/web_api.dart';
 import 'package:mosaic_inventory_management/items/services/web_api_impl.dart';
@@ -32,4 +36,10 @@ void setupServices() {
     ..registerLazySingleton<ItemsWebApi>(() => ItemsWebApiImpl())
     ..registerSingleton(ItemsRepo())
     ..registerFactory(() => ItemsViewModel());
+
+  //item details
+  serviceLocator
+    ..registerLazySingleton<ItemDetailsApi>(() => ItemDetailsWebApiImpl())
+    ..registerSingleton(ItemDetailsRepo())
+    ..registerFactory(() => ItemDetailsViewModel());
 }

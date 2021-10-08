@@ -18,7 +18,6 @@ abstract class BaseState<W extends StatefulWidget, VM extends BaseViewModel>
 
   PageIdentifier getPageIdentifier();
 
-
   onFloatingActionButtonPressed();
 
   @override
@@ -56,8 +55,9 @@ abstract class BaseState<W extends StatefulWidget, VM extends BaseViewModel>
   void loadPageData({dynamic value});
 
   void push({required Widget widget}) {
-    print("pushing");
-    Navigator.of(context).push(MaterialPageRoute(builder: (_) => widget));
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (_) => widget))
+        .then((value) => loadPageData());
   }
 
   void pop({dynamic result}) {

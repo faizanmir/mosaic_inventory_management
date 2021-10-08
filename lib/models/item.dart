@@ -1,11 +1,11 @@
 import 'package:mosaic_inventory_management/models/document.dart';
 
 class Item{
-  List<Document> files;
-   int id;
-   String name;
-   double rate;
-   double count;
+  List<Document>?files;
+   int? id;
+   String? name;
+   double? rate;
+   double? count;
 
 //<editor-fold desc="Data Methods">
 
@@ -16,6 +16,12 @@ class Item{
     required this.rate,
     required this.count,
   });
+
+
+
+
+
+
 
   @override
   bool operator ==(Object other) =>
@@ -75,13 +81,17 @@ class Item{
 
   factory Item.fromMap(Map<String, dynamic> map) {
     List<Document> docList  =  [];
-    map['files'].forEach((e){Document.fromMap(e);});
+    if(map['files']!=null) {
+      map['files'].forEach((e) {
+        docList.add(Document.fromMap(e));
+      });
+    }
     return Item(
       files: docList,
-      id: map['id'] as int,
-      name: map['name'] as String,
-      rate: map['rate'] as double,
-      count: map['count'] as double,
+      id: map['id'] as int?,
+      name: map['name'] as String?,
+      rate: map['rate'] as double?,
+      count: map['count'] as double?,
     );
   }
 

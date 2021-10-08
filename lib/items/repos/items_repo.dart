@@ -35,4 +35,5 @@ class ItemsRepo with AuthTokenMixin implements ItemsWebApi {
     return _itemsWebApi.updateItem(itemCategoryId, id, item,
         authToken: await mGetAccessToken());
   }
+
 }

@@ -10,14 +10,10 @@ import 'item_manager/item_details_manager.dart';
 
 class ItemsViewModel extends BaseViewModel<ItemNavigator>{
   final ItemsRepo _itemsRepo  =  serviceLocator<ItemsRepo>();
-  late ItemDetailsManager _itemDetailsManager;
   ItemWrapper? itemWrapper;
-  Item? _item;
 
 
-  ItemsViewModel(){
-    _itemDetailsManager = ItemDetailsManager(_itemsRepo,onNotify);
-  }
+
 
   onNotify(){
     notifyListeners();

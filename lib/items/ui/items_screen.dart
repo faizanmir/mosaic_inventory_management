@@ -4,6 +4,7 @@ import 'package:mosaic_inventory_management/base/base_state.dart';
 import 'package:mosaic_inventory_management/constants.dart';
 import 'package:mosaic_inventory_management/item_details/ui/item_details_screen.dart';
 import 'package:mosaic_inventory_management/items/navigator/item_navigator.dart';
+import 'package:mosaic_inventory_management/items/ui/add_item_dialog.dart';
 import 'package:mosaic_inventory_management/items/viewModel/items_view_model.dart';
 import 'package:provider/provider.dart';
 
@@ -154,8 +155,17 @@ class _ItemsPageState extends BaseState<ItemsPage, ItemsViewModel>
 
   @override
   onFloatingActionButtonPressed() {
-    viewModel.addItem(widget.categoryId,
-        "test-flutter ${DateTime.now().second}", 1000, 10000);
+    // viewModel.addItem(widget.categoryId,
+    //     "test-flutter ${DateTime.now().second}", 1000, 10000);
+    showDialog(
+      context: context,
+      builder: (_) => Dialog(
+        child: AddItemDialog(
+          onItemAdded: (item) => viewModel.addItem(
+              widget.categoryId, "${item.name}", item.rate!, item.count!),
+        ),
+      ),
+    );
   }
 
   @override

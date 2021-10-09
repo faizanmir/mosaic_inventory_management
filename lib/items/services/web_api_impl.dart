@@ -44,7 +44,7 @@ class ItemsWebApiImpl with ItemActionsMixin implements ItemsWebApi  {
   @override
   Future<ItemResponse> updateItem(int itemCategoryId, int id, Item item,
       {String? authToken}) async {
-    return mUpdateItem(itemCategoryId, id, item);
+    return mUpdateItem(itemCategoryId, id, item,authToken: authToken);
   }
 
 

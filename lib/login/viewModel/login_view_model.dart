@@ -11,6 +11,7 @@ class LoginViewModel extends BaseViewModel<LoginNavigator>{
 
   void doLogin(String email,String password) async{
     try{
+
      loginModel =  await loginRepository.doLogin(email, password) as LoginModel;
      loginRepository.mSetAccessToken(loginModel!.jwtToken);
      getNavigator().showMessage(loginModel!.message);

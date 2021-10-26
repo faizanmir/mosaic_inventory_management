@@ -66,7 +66,7 @@ class _LoginScreenState extends BaseState<LoginScreen, LoginViewModel>
 
   @override
   void loadPageData({value}) {
-    viewModel.doLogin("faizanmir009@gmail.com", "12345");
+   // viewModel.doLogin("faizanmir009@gmail.com", "12345");
   }
 
   @override

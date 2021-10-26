@@ -45,6 +45,18 @@ class _CategoryListingState
                               .userCategoryResponse!.categories![idx].id!);
                         },
                         child: ListTile(
+                          trailing: Container(
+                              height: 10,
+                              width: 10,
+                              decoration: (viewModel.userCategoryResponse!
+                                      .categories![idx].requiresAction!)
+                                  ? const BoxDecoration(
+                                      color: Colors.red,
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(5),
+                                      ),
+                                    )
+                                  : const BoxDecoration()),
                           title: Text(
                               "${viewModel.userCategoryResponse!.categories![idx].categoryName}"),
                           onTap: () {
@@ -60,8 +72,14 @@ class _CategoryListingState
                         height: 1,
                       ),
                   itemCount: viewModel.userCategoryResponse!.categories!.length)
-              : showProgressBar()
-          : Container(),
+              : SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [Flexible(child: Text("No items added"))],
+                  ),
+                )
+          : showProgressBar(),
     );
   }
 

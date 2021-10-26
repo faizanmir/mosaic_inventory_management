@@ -6,8 +6,6 @@ import 'package:mosaic_inventory_management/models/item.dart';
 import 'package:mosaic_inventory_management/models/items_wrapper.dart';
 import 'package:mosaic_inventory_management/services/service_locator.dart';
 
-import 'item_manager/item_details_manager.dart';
-
 class ItemsViewModel extends BaseViewModel<ItemNavigator>{
   final ItemsRepo _itemsRepo  =  serviceLocator<ItemsRepo>();
   ItemWrapper? itemWrapper;

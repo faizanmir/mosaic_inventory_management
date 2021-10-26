@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mosaic_inventory_management/constants.dart';
-import 'package:mosaic_inventory_management/item_category/ui/category_screen.dart';
 import 'package:mosaic_inventory_management/services/service_locator.dart';
 import 'package:provider/provider.dart';
 

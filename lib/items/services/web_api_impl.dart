@@ -38,7 +38,7 @@ class ItemsWebApiImpl with ItemActionsMixin implements ItemsWebApi  {
   @override
   Future<ItemResponse> deleteItem(int categoryId, int itemId,
       {String? authToken}) async {
-    return mDeleteItem(categoryId, itemId);
+    return mDeleteItem(categoryId, itemId,authToken: authToken);
   }
 
   @override

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mosaic_inventory_management/items/viewModel/items_view_model.dart';
 import 'package:mosaic_inventory_management/models/item.dart';
-import 'package:provider/provider.dart';
 
 enum TextBoxIdentifier { rate, itemName, count }
 

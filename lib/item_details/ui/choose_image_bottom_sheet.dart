@@ -24,7 +24,7 @@ class ChooseImageBottomSheet extends StatelessWidget {
           children: [
             InkWell(
               onTap:() async{
-               final pickedFile  =  await _picker.pickImage(source: ImageSource.camera);
+               final pickedFile  =  await _picker.pickImage(source: ImageSource.camera,imageQuality: 50,maxHeight: 1500,maxWidth: 1500);
                fileNavigator.onFileChosen(pickedFile!);
                Navigator.of(context).pop();
               },
@@ -47,7 +47,7 @@ class ChooseImageBottomSheet extends StatelessWidget {
 
             InkWell(
               onTap:() async{
-                final pickedFile  =  await _picker.pickImage(source: ImageSource.gallery);
+                final pickedFile  =  await _picker.pickImage(source: ImageSource.gallery,imageQuality: 50,maxHeight: 1500,maxWidth: 1500);
                 fileNavigator.onFileChosen(pickedFile!);
                 Navigator.of(context).pop();
               },

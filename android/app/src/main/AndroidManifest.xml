@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mosaic.mosaic_inventory_management">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="mosaic_inventory_management"
+        android:label="Mosaic Inventory App"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

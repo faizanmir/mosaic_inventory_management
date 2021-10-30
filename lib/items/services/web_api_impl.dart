@@ -25,7 +25,7 @@ class ItemsWebApiImpl with ItemActionsMixin implements ItemsWebApi  {
     if (response.statusCode == 200) {
       return ItemWrapper.fromMap(jsonDecode(response.body));
     } else {
-      throw Exception("item get encountered a problem ${response.body}");
+      throw Exception("Item get encountered a problem ${response.body}");
     }
   }
 

@@ -4,6 +4,7 @@ import 'package:mosaic_inventory_management/constants.dart';
 import 'package:mosaic_inventory_management/item_category/navigator/item_category_navigator.dart';
 import 'package:mosaic_inventory_management/item_category/viewModel/category_view_model.dart';
 import 'package:mosaic_inventory_management/items/ui/items_screen.dart';
+import 'package:mosaic_inventory_management/login/ui/login_ui.dart';
 import 'package:provider/provider.dart';
 
 class CategoryListing extends StatefulWidget {
@@ -21,6 +22,13 @@ class _CategoryListingState
     return AppBar(
       leading: null,
       title: const Text("Categories"),
+      actions: [
+        IconButton(onPressed: (){
+          viewModel.onLogout();
+          Navigator.pop(context);
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>const LoginScreen()));
+        }, icon: const Icon(Icons.logout))
+      ],
     );
   }
 

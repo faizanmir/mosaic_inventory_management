@@ -5,6 +5,7 @@ import 'package:mosaic_inventory_management/constants.dart';
 import 'package:mosaic_inventory_management/item_category/ui/category_screen.dart';
 import 'package:mosaic_inventory_management/login/navigators/login_navigator.dart';
 import 'package:mosaic_inventory_management/login/viewModel/login_view_model.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -50,6 +51,50 @@ class _LoginScreenState extends BaseState<LoginScreen, LoginViewModel>
               "Login",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300),
             ),
+          ),
+          Consumer<LoginViewModel>(
+            builder: (_, __, ___) => (viewModel.loginCachedUsers != null &&
+                    viewModel.loginCachedUsers!.isNotEmpty)
+                ? Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      const Text(
+                        "Previously logged in users",
+                        style: TextStyle(
+                          fontSize: 18,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      ListView.builder(
+                          itemCount: viewModel.loginCachedUsers!.length,
+                          shrinkWrap: true,
+                          itemBuilder: (ctx, idx) => Dismissible(
+                                background: Container(color: Colors.red,),
+                                onDismissed: (info){
+                                  viewModel.deleteCachedUser( viewModel.loginCachedUsers![idx].email!);
+                                },
+                                key: UniqueKey(),
+                                child: ListTile(
+                                  onTap: () {
+                                    viewModel.doLogin(
+                                        viewModel.loginCachedUsers![idx].email!,
+                                        viewModel
+                                            .loginCachedUsers![idx].password!);
+                                  },
+                                  title: Text(
+                                      viewModel.loginCachedUsers?[idx].email ??
+                                          ""),
+                                ),
+                              )),
+                    ],
+                  )
+                : Container(),
           )
         ],
       ),
@@ -66,7 +111,8 @@ class _LoginScreenState extends BaseState<LoginScreen, LoginViewModel>
 
   @override
   void loadPageData({value}) {
-   // viewModel.doLogin("faizanmir009@gmail.com", "12345");
+    // viewModel.doLogin("faizanmir009@gmail.com", "12345");
+    viewModel.getLoginCachedUsers();
   }
 
   @override
@@ -96,9 +142,7 @@ class _LoginScreenState extends BaseState<LoginScreen, LoginViewModel>
   }
 
   @override
-  onFloatingActionButtonPressed() {
-
-  }
+  onFloatingActionButtonPressed() {}
 }
 
 class InputField extends StatefulWidget {

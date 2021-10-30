@@ -37,4 +37,8 @@ class CategoryViewModel extends BaseViewModel<CategoryNavigator> {
       print(e);
     }
   }
+
+  void onLogout()async {
+    await _categoryRepository?.deleteAccessToken();
+  }
 }

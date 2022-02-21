@@ -10,7 +10,7 @@ abstract class BaseViewModel<N> extends ChangeNotifier {
   N getNavigator() => _navigator;
 
   void setNavigator(N navigator) {
-    this._navigator = navigator;
+    _navigator = navigator;
   }
 
   set showLoading(bool value) {

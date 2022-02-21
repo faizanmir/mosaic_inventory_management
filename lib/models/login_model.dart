@@ -1,14 +1,11 @@
-
-
 import 'default_response.dart';
 
-class LoginModel extends DefaultResponse{
-   String _message;
-   bool _success;
-   String _jwtToken;
+class LoginModel extends DefaultResponse {
+  String _message;
+  bool _success;
+  String _jwtToken;
 
-
-   String get message => _message; //<editor-fold desc="Data Methods">
+  String get message => _message; //<editor-fold desc="Data Methods">
 
   LoginModel({
     required String message,
@@ -68,9 +65,9 @@ class LoginModel extends DefaultResponse{
     );
   }
 
-   bool get success => _success;
+  bool get success => _success;
 
-   String get jwtToken => _jwtToken;
+  String get jwtToken => _jwtToken;
 
 //</editor-fold>
 }

@@ -4,13 +4,14 @@
 
 class UserCategoryResponse {
   UserCategoryResponse({
-      List<Category>? categories,
-      bool? success, 
-      String? message,}){
+    List<Category>? categories,
+    bool? success,
+    String? message,
+  }) {
     _categories = categories;
     _success = success;
     _message = message;
-}
+  }
 
   UserCategoryResponse.fromJson(dynamic json) {
     if (json['categories'] != null) {
@@ -39,7 +40,6 @@ class UserCategoryResponse {
     map['message'] = _message;
     return map;
   }
-
 }
 
 /// id : 82
@@ -48,13 +48,14 @@ class UserCategoryResponse {
 
 class Category {
   Category({
-      int? id, 
-      String? categoryName, 
-      bool? requiresAction,}){
+    int? id,
+    String? categoryName,
+    bool? requiresAction,
+  }) {
     _id = id;
     _categoryName = categoryName;
     _requiresAction = requiresAction;
-}
+  }
 
   Category.fromJson(dynamic json) {
     _id = json['id'];
@@ -76,5 +77,4 @@ class Category {
     map['requiresAction'] = _requiresAction;
     return map;
   }
-
 }

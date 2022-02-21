@@ -1,4 +1,4 @@
-class ItemResponse{
+class ItemResponse {
   String? message;
   bool? success;
 

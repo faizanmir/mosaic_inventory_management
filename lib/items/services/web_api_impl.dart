@@ -10,7 +10,7 @@ import 'package:mosaic_inventory_management/services/item_mixin.dart';
 
 import '../../constants.dart';
 
-class ItemsWebApiImpl with ItemActionsMixin implements ItemsWebApi  {
+class ItemsWebApiImpl with ItemActionsMixin implements ItemsWebApi {
   @override
   Future<ItemWrapper> getItemsForCategory(int categoryId,
       {String? authToken}) async {
@@ -31,21 +31,20 @@ class ItemsWebApiImpl with ItemActionsMixin implements ItemsWebApi  {
 
   @override
   Future<ItemResponse> addItem(
-      int itemCategoryId, String name, double rate, double count, {String? authToken}) async {
-      return mAddItem(itemCategoryId, name, rate, count, authToken);
+      int itemCategoryId, String name, double rate, double count,
+      {String? authToken}) async {
+    return mAddItem(itemCategoryId, name, rate, count, authToken);
   }
 
   @override
   Future<ItemResponse> deleteItem(int categoryId, int itemId,
       {String? authToken}) async {
-    return mDeleteItem(categoryId, itemId,authToken: authToken);
+    return mDeleteItem(categoryId, itemId, authToken: authToken);
   }
 
   @override
   Future<ItemResponse> updateItem(int itemCategoryId, int id, Item item,
       {String? authToken}) async {
-    return mUpdateItem(itemCategoryId, id, item,authToken: authToken);
+    return mUpdateItem(itemCategoryId, id, item, authToken: authToken);
   }
-
-
 }

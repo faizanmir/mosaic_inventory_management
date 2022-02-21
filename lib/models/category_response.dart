@@ -3,11 +3,12 @@
 
 class CategoryResponse {
   CategoryResponse({
-      String? message, 
-      bool? success,}){
+    String? message,
+    bool? success,
+  }) {
     _message = message;
     _success = success;
-}
+  }
 
   CategoryResponse.fromJson(dynamic json) {
     _message = json['message'];
@@ -25,5 +26,4 @@ class CategoryResponse {
     map['success'] = _success;
     return map;
   }
-
 }

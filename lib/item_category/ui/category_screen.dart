@@ -23,11 +23,14 @@ class _CategoryListingState
       leading: null,
       title: const Text("Categories"),
       actions: [
-        IconButton(onPressed: (){
-          viewModel.onLogout();
-          Navigator.pop(context);
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>const LoginScreen()));
-        }, icon: const Icon(Icons.logout))
+        IconButton(
+            onPressed: () {
+              viewModel.onLogout();
+              Navigator.pop(context);
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (_) => const LoginScreen()));
+            },
+            icon: const Icon(Icons.logout))
       ],
     );
   }

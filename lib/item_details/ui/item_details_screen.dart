@@ -173,7 +173,8 @@ class _ItemDetailsScreenState
         ),
         InkWell(
           onTap: () {
-            showParameterChangeDialog(false, (p0) => viewModel.changeRate(widget.categoryId, widget.id, p0));
+            showParameterChangeDialog(false,
+                (p0) => viewModel.changeRate(widget.categoryId, widget.id, p0));
           },
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
@@ -194,7 +195,12 @@ class _ItemDetailsScreenState
           height: 20,
         ),
         InkWell(
-          onTap: () {showParameterChangeDialog(false, (p0) => viewModel.changeCount(widget.categoryId, widget.id, p0));},
+          onTap: () {
+            showParameterChangeDialog(
+                false,
+                (p0) =>
+                    viewModel.changeCount(widget.categoryId, widget.id, p0));
+          },
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
             child: Row(

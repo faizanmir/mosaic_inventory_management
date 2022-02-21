@@ -30,7 +30,6 @@ void setupServices() {
     ..registerSingleton(CategoryRepository())
     ..registerFactory(() => CategoryViewModel());
 
-
   //item
   serviceLocator
     ..registerLazySingleton<ItemsWebApi>(() => ItemsWebApiImpl())

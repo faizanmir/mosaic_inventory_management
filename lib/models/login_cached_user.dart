@@ -1,4 +1,4 @@
-class LoginCachedUser{
+class LoginCachedUser {
   String? email;
   String? password;
 

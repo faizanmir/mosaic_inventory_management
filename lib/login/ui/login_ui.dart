@@ -75,9 +75,12 @@ class _LoginScreenState extends BaseState<LoginScreen, LoginViewModel>
                           itemCount: viewModel.loginCachedUsers!.length,
                           shrinkWrap: true,
                           itemBuilder: (ctx, idx) => Dismissible(
-                                background: Container(color: Colors.red,),
-                                onDismissed: (info){
-                                  viewModel.deleteCachedUser( viewModel.loginCachedUsers![idx].email!);
+                                background: Container(
+                                  color: Colors.red,
+                                ),
+                                onDismissed: (info) {
+                                  viewModel.deleteCachedUser(
+                                      viewModel.loginCachedUsers![idx].email!);
                                 },
                                 key: UniqueKey(),
                                 child: ListTile(

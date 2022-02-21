@@ -5,12 +5,11 @@ class ParameterChangeDialog extends StatefulWidget {
   final bool isCount;
   final Function(double) onParameterChange;
 
-  const ParameterChangeDialog(
-      {Key? key,
-        required this.isCount,
-        required this.onParameterChange,
-       })
-      : super(key: key);
+  const ParameterChangeDialog({
+    Key? key,
+    required this.isCount,
+    required this.onParameterChange,
+  }) : super(key: key);
 
   @override
   _ParameterChangeDialogState createState() => _ParameterChangeDialogState();

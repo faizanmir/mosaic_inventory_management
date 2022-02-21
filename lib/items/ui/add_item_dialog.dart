@@ -7,8 +7,7 @@ enum TextBoxIdentifier { rate, itemName, count }
 class AddItemDialog extends StatefulWidget {
   final Function(Item) onItemAdded;
 
-  const AddItemDialog({Key? key, required this.onItemAdded})
-      : super(key: key);
+  const AddItemDialog({Key? key, required this.onItemAdded}) : super(key: key);
 
   @override
   _AddItemDialogState createState() => _AddItemDialogState();

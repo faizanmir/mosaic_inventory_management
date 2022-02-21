@@ -1,9 +1,9 @@
-class Document{
-   int id;
-   String fileName;
-   String url;
-   int size;
-   String fileType;
+class Document {
+  int id;
+  String fileName;
+  String url;
+  int size;
+  String fileType;
 
 //<editor-fold desc="Data Methods">
 

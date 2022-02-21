@@ -39,14 +39,12 @@ class ItemWrapper {
   }
 
   factory ItemWrapper.fromMap(Map<String, dynamic> map) {
-    List<Item> itemsList  = [];
-    map['items'].forEach((e){
+    List<Item> itemsList = [];
+    map['items'].forEach((e) {
       itemsList.add(Item.fromMap(e));
     });
 
-    return ItemWrapper(
-      items: itemsList
-    );
+    return ItemWrapper(items: itemsList);
   }
 
 //</editor-fold>

@@ -1,5 +1,3 @@
-
-
 import 'default_response.dart';
 
 /// timestamp : "2021-10-05T08:08:07.604+00:00"
@@ -9,15 +7,16 @@ import 'default_response.dart';
 
 class ApiError extends DefaultResponse {
   ApiError({
-      String? timestamp, 
-      int? status, 
-      String? error, 
-      String? path,}){
+    String? timestamp,
+    int? status,
+    String? error,
+    String? path,
+  }) {
     _timestamp = timestamp;
     _status = status;
     _error = error;
     _path = path;
-}
+  }
 
   ApiError.fromJson(dynamic json) {
     _timestamp = json['timestamp'];
@@ -43,5 +42,4 @@ class ApiError extends DefaultResponse {
     map['path'] = _path;
     return map;
   }
-
 }

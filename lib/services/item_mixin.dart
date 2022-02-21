@@ -7,7 +7,6 @@ import 'package:mosaic_inventory_management/models/item_response.dart';
 import '../constants.dart';
 
 mixin ItemActionsMixin {
-
   Future<ItemResponse> mAddItem(int itemCategoryId, String name, double? rate,
       double? count, String? authToken) async {
     final request = http.MultipartRequest(
@@ -24,18 +23,17 @@ mixin ItemActionsMixin {
     }
   }
 
-
   Future<ItemResponse> mAddFilesToExistingItems(int itemId, XFile file,
       {String? authToken}) async {
     final request = http.MultipartRequest(
         "POST", Uri.parse("$baseUrl/item/$itemId/add-files-to-item"));
-    request.files.add(await http.MultipartFile.fromPath("file",file.path));
+    request.files.add(await http.MultipartFile.fromPath("file", file.path));
     print("Adding header");
     request.headers.addAll(
         {"Content-Type": "application/json", "Authorization": "$authToken"});
     print("creating response");
-    var streamdResponse  = await request.send();
-    var response  = await http.Response.fromStream(streamdResponse);
+    var streamdResponse = await request.send();
+    var response = await http.Response.fromStream(streamdResponse);
     return ItemResponse.fromMap(jsonDecode(response.body));
   }
 
@@ -71,7 +69,8 @@ mixin ItemActionsMixin {
     }
   }
 
-  Future<ItemResponse> mDeleteFileFromItem(int itemId,int fileId,{String? authToken}) async{
+  Future<ItemResponse> mDeleteFileFromItem(int itemId, int fileId,
+      {String? authToken}) async {
     final response = await http.delete(
         Uri.parse(baseUrl + "/item/$itemId/delete-file-from-item/$fileId"),
         headers: {
@@ -84,5 +83,4 @@ mixin ItemActionsMixin {
       throw Exception("item delete encountered a problem ${response.body}");
     }
   }
-
 }
